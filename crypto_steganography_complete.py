@@ -239,10 +239,10 @@ def steganography_menu():
         print("\nSteganography Options:")
         print("1. Embed text in image")
         print("2. Extract text from image")
-        print("3. Create test image")
-        print("4. Back to main menu")
+        #print("3. Create test image")#
+        print("3. Back to main menu")
         
-        choice = input("Choose option (1-4): ").strip()
+        choice = input("Choose option (1-3): ").strip()
         
         if choice == '1':
             print("\n--- EMBED TEXT IN IMAGE ---")
@@ -273,11 +273,11 @@ def steganography_menu():
             if extracted:
                 print(f"✓ Extracted text: {extracted}")
         
-        elif choice == '3':
-            print("\n--- CREATE TEST IMAGE ---")
-            create_test_image()
+        #elif choice == '3':
+         #   print("\n--- CREATE TEST IMAGE ---")
+        #    create_test_image()
         
-        elif choice == '4':
+        elif choice == '3':
             break
         
         else:
@@ -293,10 +293,10 @@ def combined_menu():
         print("\nCombined Options:")
         print("1. Encrypt text + Embed in image")
         print("2. Extract from image + Decrypt text")
-        print("3. Create test image")
-        print("4. Back to main menu")
+        #print("3. Create test image")
+        print("3. Back to main menu")
         
-        choice = input("Choose option (1-4): ").strip()
+        choice = input("Choose option (1-3): ").strip()
         
         if choice == '1':
             print("\n--- ENCRYPT + EMBED ---")
@@ -352,11 +352,11 @@ def combined_menu():
             else:
                 print("✗ Failed to extract text from image!")
         
-        elif choice == '3':
-            print("\n--- CREATE TEST IMAGE ---")
-            create_test_image()
+        #elif choice == '3':
+         #   print("\n--- CREATE TEST IMAGE ---")
+          #  create_test_image()
         
-        elif choice == '4':
+        elif choice == '3':
             break
         
         else:
