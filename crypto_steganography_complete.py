@@ -162,31 +162,6 @@ def extract_text_from_image(image_path):
         print(f"✗ Error extracting text: {e}")
         return None
 
-# ==================== UTILITY FUNCTIONS ====================
-
-def create_test_image():
-    """Create a test image for steganography"""
-    try:
-        width, height = 128, 128
-        img = Image.new('RGB', (width, height))
-        
-        pixels = []
-        for y in range(height):
-            for x in range(width):
-                r = (x * 255) // width
-                g = (y * 255) // height
-                b = ((x + y) * 255) // (width + height)
-                pixels.append((r, g, b))
-        
-        img.putdata(pixels)
-        img.save('test_image.bmp')
-        print("✓ Test image 'test_image.bmp' created (128x128 RGB)")
-        return True
-        
-    except Exception as e:
-        print(f"✗ Error creating test image: {e}")
-        return False
-
 # ==================== MENU FUNCTIONS ====================
 
 def caesar_cipher_menu():
@@ -238,8 +213,7 @@ def steganography_menu():
     while True:
         print("\nSteganography Options:")
         print("1. Embed text in image")
-        print("2. Extract text from image")
-        #print("3. Create test image")#
+        print("2. Extract text from image")      
         print("3. Back to main menu")
         
         choice = input("Choose option (1-3): ").strip()
@@ -272,11 +246,7 @@ def steganography_menu():
             extracted = extract_text_from_image(image_path)
             if extracted:
                 print(f"✓ Extracted text: {extracted}")
-        
-        #elif choice == '3':
-         #   print("\n--- CREATE TEST IMAGE ---")
-        #    create_test_image()
-        
+                      
         elif choice == '3':
             break
         
@@ -292,8 +262,7 @@ def combined_menu():
     while True:
         print("\nCombined Options:")
         print("1. Encrypt text + Embed in image")
-        print("2. Extract from image + Decrypt text")
-        #print("3. Create test image")
+        print("2. Extract from image + Decrypt text")     
         print("3. Back to main menu")
         
         choice = input("Choose option (1-3): ").strip()
@@ -352,10 +321,7 @@ def combined_menu():
             else:
                 print("✗ Failed to extract text from image!")
         
-        #elif choice == '3':
-         #   print("\n--- CREATE TEST IMAGE ---")
-          #  create_test_image()
-        
+               
         elif choice == '3':
             break
         
