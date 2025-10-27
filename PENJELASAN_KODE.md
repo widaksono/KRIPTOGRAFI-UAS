@@ -315,34 +315,6 @@ data_length = int(length_header, 2)
 3. Gunakan sebagai panjang data yang akan diekstrak
 
 ---
-
-## 📖 BAGIAN 4: UTILITY FUNCTIONS
-
-### 🎨 Create Test Image
-
-```python
-def create_test_image():
-    try:
-        width, height = 128, 128
-        img = Image.new('RGB', (width, height))
-        
-        pixels = []
-        for y in range(height):
-            for x in range(width):
-                r = (x * 255) // width
-                g = (y * 255) // height
-                b = ((x + y) * 255) // (width + height)
-                pixels.append((r, g, b))
-        
-        img.putdata(pixels)
-        img.save('test_image.bmp')
-        return True
-        
-    except Exception as e:
-        print(f"✗ Error creating test image: {e}")
-        return False
-```
-
 **Algoritma Gradient:**
 - **Red:** Gradient horizontal (0→255)
 - **Green:** Gradient vertikal (0→255)
@@ -357,7 +329,7 @@ B = ((x + y) / (width + height)) * 255
 
 ---
 
-## 📖 BAGIAN 5: MENU SYSTEM
+## 📖 BAGIAN 4: MENU SYSTEM
 
 ### 🖥️ Struktur Menu
 
@@ -411,7 +383,7 @@ def combined_menu():
 
 ---
 
-## 📖 BAGIAN 6: ERROR HANDLING STRATEGY
+## 📖 BAGIAN 5: ERROR HANDLING STRATEGY
 
 ### ⚠️ Exception Hierarchy
 
@@ -448,54 +420,3 @@ if not os.path.exists(image_path):
 ```
 
 ---
-
-## 📖 BAGIAN 7: PERFORMANCE CONSIDERATIONS
-
-### ⚡ Time Complexity Analysis
-
-1. **Caesar Cipher:** O(n) - Linear dengan panjang teks
-2. **Text to Binary:** O(n) - Linear dengan panjang teks  
-3. **LSB Embedding:** O(w×h) - Linear dengan jumlah pixel
-4. **LSB Extraction:** O(w×h) - Linear dengan jumlah pixel
-
-### 💾 Memory Usage
-
-```python
-# Memory footprint untuk gambar 256x256:
-pixels = list(img.getdata())  # 256×256×3 = 196,608 integers
-new_pixels = []               # 196,608 tuples
-binary_data = ""              # String dengan panjang variabel
-```
-
-**Optimasi Potensial:**
-- Generator untuk pixel processing
-- Streaming untuk file besar
-- Chunked processing untuk memory efficiency
-
----
-
-## 🎉 Kesimpulan Implementasi
-
-Kode ini mendemonstrasikan:
-
-1. **Clean Code Principles:**
-   - Fungsi single-purpose
-   - Descriptive naming
-   - Proper error handling
-
-2. **Algorithm Implementation:**
-   - Mathematical operations (modulo, bitwise)
-   - Data structure manipulation
-   - File I/O operations
-
-3. **Security Concepts:**
-   - Layered security (Caesar + LSB)
-   - Data hiding techniques
-   - Validation and verification
-
-4. **User Experience:**
-   - Interactive menu system
-   - Clear feedback messages
-   - Error recovery mechanisms
-
-Sistem ini memberikan foundation yang solid untuk memahami implementasi praktis dari konsep kriptografi dan steganografi.

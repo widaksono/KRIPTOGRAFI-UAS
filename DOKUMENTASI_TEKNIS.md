@@ -325,34 +325,6 @@ except Exception as e:
 
 ---
 
-## 📖 BAGIAN 8: PENGGUNAAN PRAKTIS
-
-### 🎯 Use Cases
-
-1. **Pendidikan:** Pembelajaran konsep kriptografi dan steganografi
-2. **Research:** Eksperimen dengan teknik information hiding
-3. **Digital Watermarking:** Menyembunyikan copyright information
-4. **Covert Communication:** Komunikasi tersembunyi (dengan enkripsi yang lebih kuat)
-
-### 📋 Best Practices
-
-1. **Pilih Gambar Carrier:**
-   - Resolusi tinggi untuk kapasitas besar
-   - Banyak detail/noise untuk kamuflase
-   - Format lossless (.bmp) untuk akurasi
-
-2. **Manajemen Kunci:**
-   - Gunakan shift yang tidak mudah ditebak
-   - Pertimbangkan dynamic key generation
-   - Implementasikan key distribution yang aman
-
-3. **Testing:**
-   - Selalu test dengan berbagai ukuran data
-   - Verifikasi integritas data setelah ekstraksi
-   - Uji dengan berbagai format gambar
-
----
-
 ## 🎉 Kesimpulan
 
 Sistem Crypto Steganography ini mendemonstrasikan implementasi dasar dari:
